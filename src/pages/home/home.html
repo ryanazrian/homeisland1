@@ -24,13 +24,35 @@
 
   <ion-grid>
     <ion-row text-center>
-      <ion-col col-3><ion-icon (click)='slide_homestay()' style="font-size: 30px;" color="primary" name="home"><p style="font-size: 10px;">HOMESTAY</p></ion-icon></ion-col>
-      <ion-col col-3><ion-icon (click)='slide_explore()' style="font-size: 30px;" color="primary" name="search"><p style="font-size: 10px;">EXPLORE</p></ion-icon></ion-col>
-      <ion-col col-3><ion-icon (click)='slide_souvenir()' style="font-size: 30px;" color="primary" name="cart"><p style="font-size: 10px;">SOUVENIR</p></ion-icon></ion-col>
-      <ion-col col-3><ion-icon (click)='slide_news()' style="font-size: 30px;" color="primary" name="paper"><p style="font-size: 9px;">NEWS & EVENTS</p></ion-icon></ion-col>
-      
+      <ion-col col-3>
+        <button (click)='slide_homestay()' ion-button >
+          <ion-icon style="font-size: 30px;" name="home">           
+          </ion-icon>
+        </button><p style="font-size: 10px;">HOMESTAY</p>
+      </ion-col>
+
+       <ion-col col-3>
+        <button (click)='slide_explore()' ion-button >
+          <ion-icon style="font-size: 30px;" name="search">           
+          </ion-icon>
+        </button><p style="font-size: 10px;">EXPLORE</p>
+      </ion-col>
+
+       <ion-col col-3>
+        <button (click)='slide_souvenir()' ion-button >
+          <ion-icon style="font-size: 30px;" name="cart">           
+          </ion-icon>
+        </button><p style="font-size: 10px;">SOUVENIR</p>
+      </ion-col>
+
+       <ion-col col-3>
+        <button (click)='slide_news()' ion-button >
+          <ion-icon style="font-size: 30px;" name="paper">           
+          </ion-icon>
+        </button><p style="font-size: 10px;">NEWS & EVENTS</p>
+      </ion-col>
+
     </ion-row>
   </ion-grid>
-
 
 </ion-content>
