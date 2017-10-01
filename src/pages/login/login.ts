@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
+import { SignupPage } from '../signup/signup';
 /**
  * Generated class for the LoginPage page.
  *
@@ -26,6 +27,9 @@ export class LoginPage {
   	//this.setRoot(TabsPage);
   }
 
+  daftar(){
+    this.navCtrl.push(SignupPage);
+  }
 
 
   ionViewDidLoad() {
