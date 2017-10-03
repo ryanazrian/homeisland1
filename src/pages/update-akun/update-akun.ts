@@ -1,16 +1,9 @@
-import { IonicPage } from 'ionic-angular';
 import { Component } from '@angular/core';
-import { NavController, NavParams,ToastController,LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController,LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
-//import { PilihPage} from '../pilih/pilih';
 import { Http } from '@angular/http';
-import { TabsPage} from '../tabs/tabs';
-//import { LocationSelect } from '../location-select/location-select';
-import { UserDataProvider } from '../../provider/user-data';
-import { HomePage } from '../home/home';
-import { LoginPage } from '../login/login';
 /**
- * Generated class for the SignupPage page.
+ * Generated class for the UpdateAkunPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -18,21 +11,33 @@ import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
-  selector: 'page-signup',
-  templateUrl: 'signup.html',
+  selector: 'page-update-akun',
+  templateUrl: 'update-akun.html',
 })
-export class SignupPage {
+export class UpdateAkunPage {
 
    user: {username?: string, password?: string, role?:string} = {};
    submitted = false;
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public toastCtrl: ToastController,
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  			  public toastCtrl: ToastController,
               public http: Http,
-              public userDataProvider:UserDataProvider,
-              public loadCtrl: LoadingController) {}
+              //public userDataProvider:UserDataProvider,
+              public loadCtrl: LoadingController
+  	) {}
 
-              onSignup(form: NgForm) {
+  ngAfterViewInit() {
+             //   this.username1 = this.navParams.get('username');
+                this.user.username = this.navParams.get('username');
+                this.user.password = this.navParams.get('password');
+                this.user.role = this.navParams.get('status');
+
+              }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad UpdateAkunPage');
+  }
+
+  onSignup(form: NgForm) {
                 this.submitted = true;
                 let loading = this.loadCtrl.create({
                     content: 'Tunggu sebentar...'
@@ -55,13 +60,14 @@ export class SignupPage {
 
                        }
                        this.showAlert(response.message);
-                       this.navCtrl.push(LoginPage);
+                      // this.navCtrl.push(LoginPage);
         }, err => {
            loading.dismiss();
            this.showError(err);
         });
     }
   }
+
   showError(err: any){
     err.status==0?
     this.showAlert("Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda"):
@@ -74,14 +80,4 @@ export class SignupPage {
     });
     toast.present();
   }
-
-  masuk(){
-  this.navCtrl.push(HomePage);
-  }
-  
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
-  }
-
 }

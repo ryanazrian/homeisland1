@@ -14,7 +14,7 @@ import { UserDataProvider } from '../provider/user-data';
 import { Http } from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
-
+import { UpdateAkunPage} from '../pages/update-akun/update-akun';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +23,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UpdateAkunPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -41,7 +42,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UpdateAkunPage
   ],
   providers: [
     StatusBar,

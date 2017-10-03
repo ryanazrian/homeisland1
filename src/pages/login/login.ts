@@ -23,7 +23,7 @@ export class LoginPage {
 
 
   geser(){
-  	this.navCtrl.setRoot(TabsPage);
+  	this.navCtrl.setRoot(TabsPage,{},{animate:true, direction:'forward'});
   	//this.setRoot(TabsPage);
   }
 
