@@ -36,8 +36,8 @@ export class NewsPage {
       }
     });
  }
-detailnews(){
-	this.navCtrl.push(DetailNewsPage);
+detailnews(data){
+	this.navCtrl.push(DetailNewsPage,data);
 }
 
 }
