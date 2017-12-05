@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DetailSouvenirPage } from '../detail-souvenir/detail-souvenir';
-
+//import { ListhomePage } from '../homestay/homestay';
+import { HomestayPage } from '../homestay/homestay';
 /**
- * Generated class for the SouvenirPage page.
+ * Generated class for the ListhomePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +11,20 @@ import { DetailSouvenirPage } from '../detail-souvenir/detail-souvenir';
 
 @IonicPage()
 @Component({
-  selector: 'page-souvenir',
-  templateUrl: 'souvenir.html',
+  selector: 'page-listhome',
+  templateUrl: 'listhome.html',
 })
-export class SouvenirPage {
+export class ListhomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SouvenirPage');
+    console.log('ionViewDidLoad ListhomePage');
   }
-  souvenir(){
-    this.navCtrl.push("DetailSouvenirPage");
+
+  homestaylog(){
+  	this.navCtrl.push(HomestayPage);
   }
+
 }

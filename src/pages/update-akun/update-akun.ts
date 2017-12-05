@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController,LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { Http } from '@angular/http';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the UpdateAkunPage page.
  *
@@ -46,11 +47,12 @@ export class UpdateAkunPage {
                 if (form.valid) {
                   loading.present();
                   let input = JSON.stringify({
+                  	id: this.navParams.get('id'),
                     username: this.user.username,
                     password: this.user.password,
-                    status: this.user.role="tourist"
+                    status: this.user.role
                   });
-                  this.http.post("http://127.0.0.1/homeisland/backend/signUpInfo.php",input).subscribe(data => {
+                  this.http.post("http://127.0.0.1/homeisland/backend/updateAkun.php",input).subscribe(data => {
                        loading.dismiss();
                        let response = data.json();
                        if(response.status == 200){
@@ -60,13 +62,35 @@ export class UpdateAkunPage {
 
                        }
                        this.showAlert(response.message);
-                      // this.navCtrl.push(LoginPage);
+                       this.navCtrl.setRoot(TabsPage,{},{animate:true, direction:'forward'});
         }, err => {
            loading.dismiss();
            this.showError(err);
         });
     }
   }
+   deleteAkun(){
+   //  let akun1 = dataAkun.json();
+     let loading = this.loadCtrl.create({
+                    content: 'Tunggu sebentar...'
+                });
+     let input = JSON.stringify({
+                      id: this.navParams.get('id')
+                  });
+
+      this.http.post("http://127.0.0.1/homeisland/backend/deleteAkun.php",input).subscribe(data => {
+      let response = data.json();
+      console.log(response);
+      if(response.status=="200"){
+        //this.akun = response.data;   //ini disimpen ke variabel pasien diatas itu ,, yang udah di delacre
+        this.showAlert(response.message);
+        this.navCtrl.setRoot(TabsPage,{},{animate:true, direction:'forward'});
+      }
+    },err => {
+           loading.dismiss();
+           this.showError(err);
+        }); 
+   }
 
   showError(err: any){
     err.status==0?
@@ -76,7 +100,7 @@ export class UpdateAkunPage {
   showAlert(message){
     let toast = this.toastCtrl.create({
       message: message,
-      duration: 3000
+      duration: 4000
     });
     toast.present();
   }

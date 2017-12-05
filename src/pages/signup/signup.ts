@@ -55,7 +55,7 @@ export class SignupPage {
 
                        }
                        this.showAlert(response.message);
-                       this.navCtrl.push(LoginPage);
+                       this.navCtrl.setRoot(LoginPage,{},{animate:true, direction:'forward'});
         }, err => {
            loading.dismiss();
            this.showError(err);

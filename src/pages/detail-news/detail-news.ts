@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DetailSouvenirPage } from '../detail-souvenir/detail-souvenir';
 
 /**
- * Generated class for the SouvenirPage page.
+ * Generated class for the DetailNewsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +10,16 @@ import { DetailSouvenirPage } from '../detail-souvenir/detail-souvenir';
 
 @IonicPage()
 @Component({
-  selector: 'page-souvenir',
-  templateUrl: 'souvenir.html',
+  selector: 'page-detail-news',
+  templateUrl: 'detail-news.html',
 })
-export class SouvenirPage {
+export class DetailNewsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SouvenirPage');
+    console.log('ionViewDidLoad DetailNewsPage');
   }
-  souvenir(){
-    this.navCtrl.push("DetailSouvenirPage");
-  }
+
 }

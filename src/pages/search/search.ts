@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DetailSouvenirPage } from '../detail-souvenir/detail-souvenir';
+import { ListhomePage } from '../listhome/listhome';
 
 /**
- * Generated class for the SouvenirPage page.
+ * Generated class for the SearchPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +11,19 @@ import { DetailSouvenirPage } from '../detail-souvenir/detail-souvenir';
 
 @IonicPage()
 @Component({
-  selector: 'page-souvenir',
-  templateUrl: 'souvenir.html',
+  selector: 'page-search',
+  templateUrl: 'search.html',
 })
-export class SouvenirPage {
+export class SearchPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SouvenirPage');
+    console.log('ionViewDidLoad SearchPage');
   }
-  souvenir(){
-    this.navCtrl.push("DetailSouvenirPage");
+
+  search(){
+  	this.navCtrl.push(ListhomePage);
   }
 }

@@ -11,7 +11,9 @@
     <ion-list-header>Daftar Akun</ion-list-header>
     <ion-item *ngFor="let data of akun">
       <ion-icon name="ionic" item-left></ion-icon>
-      {{data.username}} <button class="kanan" ion-button color="secondary" (click)="updateAkun(data)">Edit</button>
-    </ion-item>
+      {{data.username}} 
+      <button class="kanan" ion-button color="secondary" (click)="updateAkun(data)">Edit</button>
+      <button class="kanan2" ion-button color="danger" (click)="deleteAkun(data)">Delete</button>
+      </ion-item>
   </ion-list>
 </ion-content>

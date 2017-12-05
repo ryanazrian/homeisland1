@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="Primary">
     <ion-title>news</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,55 @@
 
 
 <ion-content padding>
+	<h5 class="h5">News</h5>
+
+        <ion-card item (click)="detailnews()">
+            <img class="pic" src="../assets/pic/market1.jpg">
+            <div class="card-title"><p style="color: #ffffff; margin-top: -21px;">Kementrian Pariwisata meresmikan cagar budaya Kepri</p></div>
+            <!-- <div class="card-subtitle">2.5KM</div> -->
+          </ion-card>
+
+          <ion-list>
+    <ion-item *ngFor="let data of news">
+      <ion-thumbnail item-start>
+        <img src="{{data.foto}}">
+      </ion-thumbnail>
+      <p> {{data.judul}} </p>
+      <button ion-button clear item-end> View </button>
+    </ion-item>
+    
+  </ion-list>
+
+    <h5 class="h5">Event</h5>
+
+        <ion-card item (click)="detailnews()">
+            <img class="pic" src="../assets/pic/market1.jpg">
+            <div class="card-title"><p style="color: #ffffff; margin-top: -21px;">Kementrian Pariwisata meresmikan cagar budaya Kepri</p></div>
+            <!-- <div class="card-subtitle">2.5KM</div> -->
+          </ion-card>
+
+          <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="../../assets/pic/1.jpg">
+      </ion-thumbnail>
+      <p> Kepri sebuah pulau pulau sejuta rasa </p>
+      <button ion-button clear item-end> View </button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="../../assets/pic/1.jpg">
+      </ion-thumbnail>
+      <p> Homestay Murah kualitas hotel </p>
+      <button ion-button clear item-end> View </button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="../../assets/pic/1.jpg">
+      </ion-thumbnail>
+      <p> Kepri Kebanjiran Pelancong </p>
+      <button ion-button clear item-end> View </button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
